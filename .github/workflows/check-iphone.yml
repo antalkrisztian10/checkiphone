@@ -1,0 +1,19 @@
+name: Verifica iPhone 17 pe BSG Mag
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # la fiecare 30 de minute (UTC)
+  workflow_dispatch:          # permite rulare manuala
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - run: python check.py
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
