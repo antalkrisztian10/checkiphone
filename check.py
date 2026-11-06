@@ -5,6 +5,9 @@ URL = "https://bsgmag.ro/catalog/q/Apple%20IPhone%2017"
 
 headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
 html = requests.get(URL, headers=headers, timeout=30).text
+print(len(html))
+print(html[:1500])
+print("Telefon Apple" in html, "iPhone 18" in html, "iphone 18" in html.lower())
 
 if re.search(r"Telefon\s+Apple\s+iPhone\s+18", html, re.IGNORECASE):
     msg = f"iPhone 17 a apărut pe bsgmag: {URL}"
