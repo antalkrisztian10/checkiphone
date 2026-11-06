@@ -1,7 +1,7 @@
 import os, re, sys, requests
 
 # pune aici linkul de la cautarea "iphone 17" de pe bsgmag
-URL = "URL = "https://bsgmag.ro/catalog/q/Apple%20IPhone%2017"
+URL = "https://bsgmag.ro/catalog/q/Apple%20IPhone%2017"
 
 headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
 html = requests.get(URL, headers=headers, timeout=30).text
